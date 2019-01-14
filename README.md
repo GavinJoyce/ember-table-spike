@@ -1,7 +1,8 @@
 # ember-table-spike
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+![table-sort](https://user-images.githubusercontent.com/2526/51108804-2e1e4580-17eb-11e9-82ad-d63b73d18758.gif)
+
+See the `x-table` component
 
 ## Prerequisites
 
