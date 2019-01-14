@@ -1,0 +1,12 @@
+sortBy: {{sortBy}}<br />
+sortDirection: {{sortDirection}}
+
+<table width="100%" border="1">
+  <tr>
+    {{yield (hash column=(component 'x-table-column' onSort=(action 'sort') sortBy=sortBy sortDirection=sortDirection))}}
+  </tr>
+
+  {{#each (sort-by (concat sortBy ':' sortDirection) rowData) as |data|}}
+    {{yield (hash row=(component 'x-table-row' data=data))}}
+  {{/each}}
+</table>

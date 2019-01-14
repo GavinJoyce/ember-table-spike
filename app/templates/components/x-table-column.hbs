@@ -1,0 +1,12 @@
+<th>
+  <a onclick={{action @onSort identifier}}>
+    {{label}}
+    {{#if (eq sortBy identifier)}}
+      {{#if (eq sortDirection 'desc')}}
+        🔽
+      {{else}}
+        🔼
+      {{/if}}
+    {{/if}}
+  </a>
+</th>

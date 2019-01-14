@@ -1,5 +1,24 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
 
-{{outlet}}
+<h1>Dynamic content:</h1>
+
+{{#let 
+  (array 
+    (hash id=1 name="Alex" age=5)
+    (hash id=2 name="Ben" age=4)
+    (hash id=3 name="Sophie" age=1)
+    (hash id=4 name="Sarah" age=41)
+    (hash id=5 name="Gavin" age=41)
+  ) as |people|
+}}
+  {{#x-table rowData=people sortBy="id" as |table|}}
+    {{table.column label="Id" identifier="id"}}
+    {{table.column label="Name" identifier="name"}}
+    {{table.column label="Age" identifier="age"}}
+
+    {{#table.row as |row|}}
+      <td>{{row.data.id}}</td>
+      <td>{{row.data.name}}</td>
+      <td>{{row.data.age}}</td>
+    {{/table.row}}
+  {{/x-table}}
+{{/let}}
